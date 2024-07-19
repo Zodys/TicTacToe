@@ -79,7 +79,7 @@ namespace TicTacToe
                     _board.PrintWinner(winner);
 
                     // Спросить игрока, хочет ли он сыграть еще одну партию
-                    Console.WriteLine("Хотите сыграть еще одну партию? (y/n)");
+                    Console.WriteLine("Хотите сыграть еще одну партию? (y)");
                     string answer = Console.ReadLine();
                     if (answer.Equals("y", StringComparison.OrdinalIgnoreCase))
                     {
@@ -87,14 +87,10 @@ namespace TicTacToe
                         _board = new Board();
                         _player.IsPlayerTurn = _player.PlayerSymbol == CellState.Cross;
                     }
-                    else if (answer.Equals("n", StringComparison.OrdinalIgnoreCase))
+                    else
                     {
                         // Выйти из игры
                         break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Неверный ввод. Пожалуйста, введите y или n.");
                     }
                 }
             }
